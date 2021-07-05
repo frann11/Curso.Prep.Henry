@@ -10,6 +10,12 @@ function deObjetoAmatriz(objeto){
       C: 3
     }) ➞ [["D", 1], ["B", 2], ["C", 3]]*/
   //Escribe tu código aquí
+  var arr = [];
+  for (elemento in objeto){
+      arr.push([elemento,objeto[elemento] ])
+  }
+  return(arr)
+
 }
 
 
@@ -18,8 +24,32 @@ function numberOfCharacters(string) {
   //en formato par clave-valor.
   //Ej: Recibe ---> "adsjfdsfsfjsdjfhacabcsbajda" || Devuelve ---> { a: 5, b: 2, c: 2, d: 4, f: 4, h:1, j: 4, s: 5 } 
   //Escribe tu código aquí
-}
+  // convierto string en array
+  var arr = string.split('')
+  var contados = []
+  var cantidadLetras = {}
+//  for (value of unicos){
+//       console.log(value)
+//   }
+  for (value of arr){
+    //// agrego letras del string al array
+    if (contados.indexOf(value) === -1){
+      contados.push(value)
+    }
+    
+  }
 
+  for (letra of contados){
+    let cuenta = 0;
+    for (value of arr){
+      if (letra == value){
+        cuenta= cuenta +1
+      }
+    }
+    cantidadLetras[letra] = cuenta
+  }
+  return(cantidadLetras)
+}
 
 function capToFront(s) {
   //Realiza una función que reciba como parámetro un string y mueva todas las letras mayúsculas
